@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Claude Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-10px);
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin-top: 2rem;
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="pulse">Hello World! <span class="emoji">👋</span></h1>
+        <p>This is a test page created by Claude using the MCP filesystem integration.</p>
+        <p>We're testing the local file creation → GitHub repository workflow!</p>
+        
+        <div class="info">
+            <h3>🚀 Next Steps:</h3>
+            <p>✅ Create local file (completed)<br>
+            ✅ Create GitHub repository (completed)<br>
+            ✅ Push to GitHub (completed)<br>
+            🎉 Celebrate successful integration!</p>
+        </div>
+        
+        <p><strong>Created:</strong> <span id="timestamp"></span></p>
+    </div>
+    
+    <script>
+        // Add timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+        
+        // Add some interactive fun
+        document.querySelector('.container').addEventListener('click', function() {
+            this.style.background = `hsl(${Math.random() * 360}, 70%, 95%)`;
+        });
+    </script>
+</body>
+</html>
