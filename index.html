@@ -4,72 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World - Claude Test</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            text-align: center;
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .container:hover {
-            transform: translateY(-10px);
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        p {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        
-        .info {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            margin-top: 2rem;
-        }
-        
-        .emoji {
-            font-size: 2rem;
-            margin: 0 0.5rem;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -78,14 +13,32 @@
         <p>We're testing the local file creation → GitHub repository workflow!</p>
         
         <div class="info">
-            <h3>🚀 Next Steps:</h3>
-            <p>✅ Create local file (completed)<br>
-            ✅ Create GitHub repository (completed)<br>
-            ✅ Push to GitHub (completed)<br>
-            🎉 Celebrate successful integration!</p>
+            <h3>🚀 Progress Tracker:</h3>
+            <div class="status-grid">
+                <div class="status-item completed">✅ Create local files</div>
+                <div class="status-item completed">✅ Create GitHub repository</div>
+                <div class="status-item completed">✅ Push to GitHub</div>
+                <div class="status-item completed">✅ Create branch</div>
+                <div class="status-item completed">✅ Separate CSS file</div>
+                <div class="status-item">🔄 Test pull request</div>
+            </div>
+        </div>
+
+        <div class="code-improvement">
+            <h4>📝 Code Improvement - Branch: branching-test</h4>
+            <p><strong>What Changed:</strong></p>
+            <ul>
+                <li>🎨 Extracted all CSS to separate <code>styles.css</code> file</li>
+                <li>🧹 Removed all embedded styling from HTML</li>
+                <li>📁 Better file organisation and separation of concerns</li>
+                <li>✨ Added enhanced grid layout for status tracking</li>
+                <li>🎯 Cleaner, more maintainable codebase</li>
+            </ul>
+            <p><em>This demonstrates local file modifications before pushing to GitHub!</em></p>
         </div>
         
         <p><strong>Created:</strong> <span id="timestamp"></span></p>
+        <p><strong>Branch:</strong> branching-test | <strong>Status:</strong> Modified locally 🔧</p>
     </div>
     
     <script>
@@ -96,6 +49,10 @@
         document.querySelector('.container').addEventListener('click', function() {
             this.style.background = `hsl(${Math.random() * 360}, 70%, 95%)`;
         });
+
+        // Add branch indicator
+        console.log('🌿 Running on branch: branching-test');
+        console.log('📝 CSS extracted to external file');
     </script>
 </body>
 </html>
